@@ -17,7 +17,7 @@ const config: Config = {
         },
         text: {
           primary: '#982F31',
-          secondary: '#6B4E4F',
+          secondary: '#A26331',  // Updated to match Figma
           muted: '#8B7475',
           light: '#FAECEB',
         },
@@ -41,6 +41,7 @@ const config: Config = {
         'h2': ['48px', { lineHeight: '54px', letterSpacing: '-1.92px', fontWeight: '500' }],
         'h3': ['36px', { lineHeight: '48px', letterSpacing: '-0.72px', fontWeight: '500' }],
         'h4': ['28px', { lineHeight: '36px', letterSpacing: '-1.12px', fontWeight: '500' }],
+        'text-xl': ['20px', { lineHeight: '32px', letterSpacing: '-0.4px' }],  // Added this
         'text-lg': ['18px', { lineHeight: '28px', letterSpacing: '-0.36px' }],
         'text-md': ['16px', { lineHeight: '28px', letterSpacing: '-0.36px' }],
         'text-sm': ['14px', { lineHeight: '18px', letterSpacing: '-0.28px' }],
