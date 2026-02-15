@@ -27,9 +27,13 @@ export const WhereWeAre: React.FC = () => {
           beauty of Utah mountains.
         </p>
 
-        {/* Placeholder map */}
-        <div className="w-full max-w-[816px] h-[400px] mx-auto mb-12 bg-gray-200 flex items-center justify-center border border-border-default">
-          <div className="text-gray-400 text-5xl">🗺️</div>
+        {/* Map */}
+        <div className="w-full max-w-[816px] h-[400px] mx-auto mb-12 relative overflow-hidden rounded-lg">
+          <img 
+            src="/images/heber-map.jpg" 
+            alt="Heber Valley location map showing nearby ski resorts and attractions"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Highlights */}
