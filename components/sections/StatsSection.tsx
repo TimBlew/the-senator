@@ -14,10 +14,10 @@ export const StatsSection: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-h1 font-heading font-bold text-brand-primary mb-2">
+              <div className="text-h3 font-heading font-medium text-brand-primary mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-text-secondary">
+              <div className="text-text-md text-text-secondary">
                 {stat.label}
               </div>
             </div>
