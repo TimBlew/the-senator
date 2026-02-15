@@ -20,7 +20,7 @@ export const Navigation: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="/rooms" className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
+            <a href="/our-rooms" className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
               Our Rooms
             </a>
             <a href="/policies" className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
@@ -57,7 +57,7 @@ export const Navigation: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border-subtle">
             <div className="flex flex-col gap-4">
-              <a href="/rooms" className="text-md text-text-secondary hover:text-brand-primary py-2">
+              <a href="/our-rooms" className="text-md text-text-secondary hover:text-brand-primary py-2">
                 Our Rooms
               </a>
               <a href="/policies" className="text-md text-text-secondary hover:text-brand-primary py-2">
