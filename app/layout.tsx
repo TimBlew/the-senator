@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "The Heber Senator | Historic Bed & Breakfast in Heber Valley",
   description: "A historic bed & breakfast shaped by the pace of Heber Valley and the mountains that surround it. Built in 1902, offering 10 unique rooms.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? headersList.get("referer") ?? "";
+  const isStudio = pathname.includes("/studio");
+
   return (
     <html lang="en">
       <head>
@@ -24,11 +29,11 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <Navigation />
-        <main className="pt-16">
+        {!isStudio && <Navigation />}
+        <main className={!isStudio ? "pt-16" : ""}>
           {children}
         </main>
-        <Footer />
+        {!isStudio && <Footer />}
       </body>
     </html>
   );

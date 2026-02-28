@@ -1,12 +1,33 @@
 import React from 'react';
+import { client } from '@/sanity/lib/client';
 
-export const StatsSection: React.FC = () => {
-  const stats = [
-    { value: '1902', label: 'Established' },
-    { value: '10', label: 'Unique Rooms & Suites' },
-    { value: '4', label: 'Nearby Ski Resorts' },
-    { value: '3', label: 'Lakes within reach' },
-  ];
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface StatsData {
+  stats: Stat[];
+}
+
+const defaultStats = [
+  { value: '1902', label: 'Established' },
+  { value: '10', label: 'Unique Rooms & Suites' },
+  { value: '4', label: 'Nearby Ski Resorts' },
+  { value: '3', label: 'Lakes within reach' },
+];
+
+async function getStatsData(): Promise<StatsData | null> {
+  return client.fetch(
+    `*[_type == "statsSection"][0]`,
+    {},
+    { next: { tags: ['statsSection'] } }
+  );
+}
+
+export const StatsSection: React.FC = async () => {
+  const data = await getStatsData();
+  const stats = data?.stats?.length ? data.stats : defaultStats;
 
   return (
     <section className="py-16 bg-white">
