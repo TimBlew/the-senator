@@ -32,25 +32,18 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
   return (
     <div className="bg-white rounded-[16px] overflow-hidden flex flex-col shadow-sm">
 
-      {/* Image - full width, no inset */}
+      {/* Image */}
       <div className="relative w-full h-[240px]">
-        <Image
-          src={imageSrc}
-          alt={room.name}
-          fill
-          className="object-cover"
-        />
+        <Image src={imageSrc} alt={room.name} fill className="object-cover" />
       </div>
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-grow">
+
         {/* Badges */}
         <div className="flex gap-2 mb-3">
           {room.badges.map((badge) => (
-            <span
-              key={badge}
-              className={`px-3 py-1 text-sm font-medium rounded-full ${getBadgeColor(badge)}`}
-            >
+            <span key={badge} className={`px-3 py-1 text-sm font-medium rounded-full ${getBadgeColor(badge)}`}>
               {badge}
             </span>
           ))}
@@ -65,9 +58,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
         <div className="flex gap-3 mb-3">
           <span className="text-md text-[#C88654]">{room.bedType}</span>
           {room.amenities.map((amenity, index) => (
-            <span key={index} className="text-md text-[#C88654]">
-              {amenity}
-            </span>
+            <span key={index} className="text-md text-[#C88654]">{amenity}</span>
           ))}
         </div>
 
@@ -77,7 +68,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
         </p>
 
         {/* Check Availability Button */}
-        <button className="w-full py-3 text-md font-normal text-[#6B4E4F] bg-[#FEFDFC] border border-[#D8CCC4] rounded hover:bg-[#FAECEB] hover:text-[#982F31] hover:border-[#982F31] transition-colors">
+        <button className="w-full py-3 text-md font-medium text-[#982F31] bg-[#FEFDFC] border border-[#D8CCC4] rounded hover:bg-[#FAECEB] hover:border-[#982F31] transition-colors">
           Check Availability
         </button>
       </div>
