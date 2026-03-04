@@ -8,11 +8,12 @@ interface Room {
   bedType: string;
   amenities: string[];
   description: string;
-  image: string;
+  image?: string;
 }
 
 interface RoomCardProps {
   room: Room;
+  href?: string;
 }
 
 const getBadgeColor = (badge: string) => {
@@ -26,18 +27,19 @@ const getBadgeColor = (badge: string) => {
 };
 
 export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
+  const imageSrc = room.image && room.image.trim() !== '' ? room.image : '/images/room-placeholder.jpg';
+
   return (
-    <div className="bg-[#F4EFEC] border border-[#E1D7D1] rounded-[16px] overflow-hidden flex flex-col">
-      {/* Image Placeholder */}
-      <div className="w-full h-[240px] bg-[#E8E2DD] flex items-center justify-center">
-        <div className="text-gray-400">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="15" width="50" height="40" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-            <rect x="20" y="25" width="50" height="40" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-            <circle cx="30" cy="35" r="4" fill="currentColor"/>
-            <path d="M20 50L30 40L40 50L50 35L65 50V60H20V50Z" fill="currentColor" opacity="0.3"/>
-          </svg>
-        </div>
+    <div className="bg-white rounded-[16px] overflow-hidden flex flex-col shadow-sm">
+
+      {/* Image - full width, no inset */}
+      <div className="relative w-full h-[240px]">
+        <Image
+          src={imageSrc}
+          alt={room.name}
+          fill
+          className="object-cover"
+        />
       </div>
 
       {/* Content */}
@@ -47,7 +49,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
           {room.badges.map((badge) => (
             <span
               key={badge}
-              className={`px-3 py-1 text-sm font-medium rounded ${getBadgeColor(badge)}`}
+              className={`px-3 py-1 text-sm font-medium rounded-full ${getBadgeColor(badge)}`}
             >
               {badge}
             </span>
@@ -70,12 +72,12 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
         </div>
 
         {/* Description */}
-        <p className="text-lg text-[#982F31] mb-4 flex-grow leading-[28px]">
+        <p className="text-lg text-[#6B4E4F] mb-4 flex-grow leading-[28px]">
           {room.description}
         </p>
 
         {/* Check Availability Button */}
-        <button className="w-full py-3 text-md font-normal text-[#982F31] bg-[#FEFDFC] border border-[#D8CCC4] rounded hover:bg-[#982F31] hover:text-white hover:border-[#982F31] transition-colors">
+        <button className="w-full py-3 text-md font-normal text-[#6B4E4F] bg-[#FEFDFC] border border-[#D8CCC4] rounded hover:bg-[#FAECEB] hover:text-[#982F31] hover:border-[#982F31] transition-colors">
           Check Availability
         </button>
       </div>

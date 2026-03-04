@@ -9,7 +9,7 @@ const rooms = [
     bedType: 'King Bed',
     amenities: ['Jetted Tub'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/senator-spa-suite.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'sundance-spa-suite',
@@ -18,7 +18,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Spa Tub'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/sundance-spa-suite.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'tiffany-suite',
@@ -27,7 +27,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Bay Window'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/tiffany-suite.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'grand-spa-room',
@@ -36,7 +36,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Jetted Tub'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/grand-spa-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'royal-spa-room',
@@ -45,7 +45,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Spa Tub'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/royal-spa-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'spa-room',
@@ -54,7 +54,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Whirlpool'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/spa-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'blue-spa-room',
@@ -63,7 +63,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Spa Tub'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/blue-spa-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'gold-room',
@@ -72,7 +72,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Vintage Tub'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/gold-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'rose-room',
@@ -81,7 +81,7 @@ const rooms = [
     bedType: 'Queen Bed',
     amenities: ['Private Bath'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/rose-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
   {
     id: 'murdock-room',
@@ -90,7 +90,7 @@ const rooms = [
     bedType: 'ADA Accessible',
     amenities: ['Fireplace'],
     description: 'Top floor crown jewel with king bed, two-person jetted tub, and Italian travertine marble.',
-    image: '/images/rooms/murdock-room.jpg',
+    image: '/images/room-placeholder.jpg',
   },
 ];
 
@@ -100,10 +100,32 @@ export default function OurRoomsPage() {
       {/* Header Section */}
       <section className="py-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <h1 className="text-hero font-heading font-medium text-[#592524] mb-4">
+          <h1
+            style={{
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontSize: '72px',
+              fontWeight: 500,
+              color: '#592524',
+              letterSpacing: '-2.88px',
+              lineHeight: '72px',
+              marginBottom: '16px',
+            }}
+          >
             Our Rooms & Suites
           </h1>
-          <p className="text-text-xl text-text-secondary max-w-3xl mx-auto">
+          <p
+            style={{
+              fontFamily: "'Funnel Sans', sans-serif",
+              fontSize: '20px',
+              fontWeight: 400,
+              color: '#A26331',
+              letterSpacing: '-0.4px',
+              lineHeight: '32px',
+              maxWidth: '720px',
+              margin: '0 auto',
+              textAlign: 'center',
+            }}
+          >
             Each room is uniquely designed with historic character and modern comfort. From spa suites to charming standard rooms.
           </p>
         </div>
